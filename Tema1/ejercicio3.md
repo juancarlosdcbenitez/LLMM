@@ -3,8 +3,6 @@
 SVG (Scalable Vector Graphics) es un formato de gráficos vectoriales basados en XML.  
 Permite crear imágenes que no pierden calidad al aumentar su tamaño.
 
-# Ejemplo
-
 <html>
 <body>
 
