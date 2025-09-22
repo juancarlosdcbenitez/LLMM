@@ -1,6 +1,6 @@
 # LLMM
 
-Este repositorio incluye las actividades llevadas a cabo en el módulo *Lenguajes de marcas* (LLMM).
+Este repositorio incluye las actividades llevadas a cabo en el módulo de *Lenguajes de marcas* (LLMM).
 
 ## Contenido
 
