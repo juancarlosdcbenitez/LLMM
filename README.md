@@ -4,7 +4,7 @@ Este repositorio incluye las actividades llevadas a cabo en el módulo de *Lengu
 
 ## Contenido
 
-### Tema 1 - Ejercicios
+### Tema 1 - Introducción a los lenguajes de marca
 
 | Ejercicio | Descripción |
 |-----------|-------------|
