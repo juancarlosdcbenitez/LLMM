@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 27</title>
+</head>
+<body>
+  <h2>Video con controles estándar</h2>
+  <video width="400" controls style="border: 1px solid #ccc;">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+    <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
+    Tu navegador no soporta el elemento de video.
+  </video>
+  <p>
+    Video cortesía de
+    <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.
+  </p>
+
+  <h2>Video con botones personalizados</h2>
+  <video id="miVideo" width="400" style="border: 1px solid #000; background: #000;">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+    <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
+    Tu navegador no soporta el elemento de video.
+  </video>
+  <br /><br />
+  
+  <button onclick="document.getElementById('miVideo').play()">Reproducir</button>
+  <button onclick="document.getElementById('miVideo').pause()">Pausar</button>
+  <button onclick="document.getElementById('miVideo').volume += 0.1">Volumen +</button>
+  <button onclick="document.getElementById('miVideo').volume -= 0.1">Volumen -</button>
+</body>
+</html>
