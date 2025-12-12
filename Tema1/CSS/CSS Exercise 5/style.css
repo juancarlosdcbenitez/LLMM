@@ -1,0 +1,26 @@
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+caption {
+    caption-side: top;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+th {
+    background-color: #999;
+    letter-spacing: 4px;
+}

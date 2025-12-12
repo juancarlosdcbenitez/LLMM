@@ -1,0 +1,141 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+h2 {
+  border-bottom: 2px solid #666;
+  padding-bottom: 5px;
+  margin-top: 40px;
+}
+
+.contenedor {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  background-color: #ccc;
+  border: 1px solid #999;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.caja {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.ex1 .rojo {
+  background-color: red;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 60px;
+}
+.ex1 .azul {
+  background-color: blue;
+  bottom: 0;
+  right: 0;
+  width: 180px;
+  height: 40px;
+}
+.ex1 .verde {
+  background-color: green;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 80px;
+}
+.ex1 .amarillo {
+  background-color: yellow;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 80px;
+}
+
+.ex2 .azul {
+  background-color: blue;
+  top: 0;
+  left: 100px;
+  width: 250px;
+  height: 80px;
+}
+.ex2 .verde {
+  background-color: green;
+  top: 100px;
+  left: 0;
+  width: 120px;
+  height: 100px;
+}
+.ex2 .amarillo {
+  background-color: yellow;
+  top: 50px;
+  right: 0;
+  width: 150px;
+  height: 100px;
+}
+.ex2 .rojo {
+  background-color: red;
+  bottom: 0;
+  left: 150px;
+  width: 200px;
+  height: 80px;
+}
+
+.ex3 .caja {
+  top: 50px;
+  bottom: 50px;
+  width: 100px;
+}
+.ex3 .verde {
+  background-color: green;
+  left: 50px;
+}
+.ex3 .amarillo {
+  background-color: yellow;
+  left: 150px;
+}
+.ex3 .rojo {
+  background-color: red;
+  left: 250px;
+}
+.ex3 .azul {
+  background-color: blue;
+  left: 350px;
+}
+
+.ex4 .horizontal {
+  left: 50px;
+  right: 50px;
+  height: 60px;
+}
+.ex4 .amarillo {
+  background-color: yellow;
+  bottom: 60px;
+}
+.ex4 .rojo {
+  background-color: red;
+  top: 60px;
+}
+.ex4 .vertical {
+  top: 20px;
+  bottom: 20px;
+  width: 60px;
+}
+.ex4 .azul {
+  background-color: blue;
+  left: 100px;
+  z-index: 10;
+}
+.ex4 .verde {
+  background-color: green;
+  right: 100px;
+  z-index: 10;
+}

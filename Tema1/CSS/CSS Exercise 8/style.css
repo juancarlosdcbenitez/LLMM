@@ -1,0 +1,74 @@
+body {
+    font-family: sans-serif;
+    background-color: #ddd;
+    margin: 0;
+    height: 100vh;
+    /* Se establece posicionamiento relativo en el padre para que sea la referencia de coordenadas de los hijos absolutos.*/
+    position: relative; 
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+.nota {
+    /* Saca el elemento del flujo normal del documento. Esto permite colocarlo en cualquier punto exacto de la pantalla (superponiéndose si es necesario) sin afectar a los elementos vecinos. Las coordenadas se definen con top, bottom, left y right.*/
+    position: absolute;
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #999;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    font-size: 1.1em;
+}
+
+#nota1 {
+    background-color: #ffcc66;
+    /* Coordenadas desde arriba y centrado horizontalmente.*/
+    top: 100px;
+    left: 50%;
+    margin-left: -300px; 
+    width: 600px;
+    text-align: center;
+}
+
+#nota2 {
+    background-color: #ffff99;
+    /* Posicionado respecto a la esquina superior izquierda.*/
+    top: 250px;
+    left: 50px;
+}
+
+#nota3 {
+    background-color: #66ff66;
+    /* Posicionado en el centro.*/
+    top: 350px;
+    left: 40%;
+    /* Controla el orden de apilamiento (eje Z). Un valor mayor coloca este elemento por encima de los demás en caso de superposición.*/
+    z-index: 10;
+    border: 2px solid green;
+}
+
+#nota4 {
+    background-color: #ccffff;
+    /* Posicionado respecto a la esquina superior derecha.*/
+    top: 250px;
+    right: 50px;
+}
+
+#nota5 {
+    background-color: #ffcccc;
+    /* Posicionado respecto a la esquina inferior derecha.*/
+    bottom: 50px;
+    right: 50px;
+    height: 150px;
+}
+
+#nota6 {
+    background-color: #f2ccff;
+    /* Posicionado respecto a la esquina inferior izquierda,*/
+    bottom: 50px;
+    left: 50px;
+    height: 150px;
+}

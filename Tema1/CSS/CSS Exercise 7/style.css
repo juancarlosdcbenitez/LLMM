@@ -1,0 +1,61 @@
+/* Al ser una pregunta teórica, será respondida con comentarios en el código. */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 20px;
+}
+
+h1 {
+    background-color: #ffff99;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.contenedor-columnas {
+    width: 100%;
+    /* Se utiliza 'overflow: hidden' para contener los elementos flotantes y evitar que el padre pierda su altura*/
+    overflow: hidden; 
+}
+
+.columna {
+    /* Saca los elementos del flujo vertical normal y los alinea horizontalmente uno al lado del otro. */
+    float: left;
+    /* Usamos porcentajes para distribuir el ancho disponible entre las 3 columnas, dejando un margen restante para la separación. */
+    width: 32%; 
+    margin-right: 1%; 
+    background-color: #ffcc66;
+    padding-bottom: 20px;
+    min-height: 400px; 
+}
+
+h3 {
+    margin: 10px;
+    border-bottom: 2px solid #cc9900;
+}
+
+.evento {
+    background-color: #ff9933;
+    border: 2px solid #e65c00;
+    margin: 10px;
+    padding: 10px;
+    color: black;
+}
+
+.anio {
+    font-weight: bold;
+    color: white;
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer {
+    /* Restaura el flujo normal del documento, impidiendo que este elemento suba y se coloque adyacente a los elementos flotantes anteriores. */
+    clear: both;
+    background-color: #ffff99;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    font-size: 0.8em;
+}
