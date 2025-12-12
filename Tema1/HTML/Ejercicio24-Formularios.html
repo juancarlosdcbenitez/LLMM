@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 24</title>
+</head>
+<body>
+  <h1>Rellena tu CV</h1>
+
+  <form action="#" method="post">
+    
+    <label><b>Nombre</b></label><br>
+    <input type="text" name="nombre" maxlength="30" required />
+    <br /><br />
+
+    <label><b>Apellidos</b></label><br>
+    <input type="text" name="apellidos" maxlength="80" required />
+    <br /><br />
+
+    <label><b>Contraseña</b></label><br>
+    <input type="password" name="clave" maxlength="10" required />
+    <br /><br />
+
+    <label><b>DNI</b></label><br>
+    <input type="text" name="dni" required />
+    <br /><br />
+
+    <label><b>Sexo:</b></label><br />
+    
+    <input type="radio" name="sexo" value="hombre" id="hombre" />
+    <label for="hombre">Hombre</label><br />
+    
+    <input type="radio" name="sexo" value="mujer" id="mujer" />
+    <label for="mujer">Mujer</label>
+    <br /><br />
+
+    <label><b>Incluir mi foto:</b></label>
+    <input type="file" name="foto" />
+    <br /><br />
+
+    <input type="checkbox" name="boletin" id="boletin" checked />
+    <label for="boletin"><b>Suscribirme al boletín de novedades</b></label>
+    <br /><br />
+
+    <input type="submit" value="Guardar cambios" />
+    <input type="reset" value="Borrar los datos introducidos" />
+  </form>
+</body>
+</html>

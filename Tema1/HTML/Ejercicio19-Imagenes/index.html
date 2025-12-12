@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 19</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.5; 
+      margin: 2rem; 
+    }
+    
+    .bloque { 
+      overflow: auto; 
+      margin-bottom: 2rem; 
+    }
+
+    .bloque img { 
+      width: 160px; 
+      height: 120px; 
+      object-fit: cover; 
+    }
+    
+    .izq img { 
+      float: left; 
+      margin: 0 1rem 1rem 0; 
+    }
+    
+    .der img { 
+      float: right; 
+      margin: 0 0 1rem 1rem; 
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejercicio 19 - imágenes</h1>
+
+  <div class="bloque izq">
+    <img src="harddisk.jpg" alt="Imagen flotada a la izquierda" />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta vero cumque placeat officia neque, sed corporis ducimus expedita porro veniam veritatis error consectetur voluptates quis recusandae corrupti, totam unde temporibus.
+    </p>
+  </div>
+
+  <div class="bloque der">
+    <img src="ssd.jpg" alt="Imagen flotada a la derecha" />
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa magni ratione laborum alias ipsum quia nesciunt rem? Veritatis vel, a facere nulla esse temporibus animi! Quae facilis molestias cupiditate accusantium.
+    </p>
+  </div>
+</body>
+</html>
