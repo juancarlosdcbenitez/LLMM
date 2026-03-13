@@ -1,8 +1,3 @@
-/* =========================================
-   naturaleza.js — Scripts globales
-   ========================================= */
-
-/* Inject Navbar */
 function renderNavbar(activePage) {
   const pages = [
     { href: '../index.html', label: 'Inicio' },
@@ -35,7 +30,6 @@ function renderNavbar(activePage) {
   </nav>`;
 }
 
-/* Inject Footer */
 function renderFooter() {
   return `
   <footer class="footer-custom">
@@ -75,7 +69,6 @@ function renderFooter() {
   </footer>`;
 }
 
-/* Scroll animations with IntersectionObserver */
 document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
