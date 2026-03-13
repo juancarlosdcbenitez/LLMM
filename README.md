@@ -18,4 +18,4 @@ Este repositorio incluye las actividades llevadas a cabo en el módulo de *Lengu
 
 ### Quarterly Work - Bootstrap Website
 
-| [Práctica de Bootstrap](qw2/index.html/) | Ejercicios de CSS |
+| [Práctica de Bootstrap](qw2/index.html/) |
