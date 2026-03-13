@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimedia — Naturaleza en Foco</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet">
+  <style>
+    body { padding-top: 70px; }
+
+    /* ── Tarjetas de video ── */
+    .video-card {
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    .video-thumb {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumb img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .video-card:hover .video-thumb img {
+      transform: scale(1.05);
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(201,162,39,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .video-card:hover .play-btn {
+      background: var(--acento-dorado);
+      transform: translate(-50%, -50%) scale(1.15);
+      animation: pulse-verde 1.5s infinite;
+    }
+
+    .video-card .video-info {
+      padding: 1.2rem;
+    }
+
+    .video-duration {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      letter-spacing: 1px;
+    }
+
+    /* ── Audio cards ── */
+    .audio-card {
+      background: white;
+      padding: 1.5rem;
+      border-left: 4px solid var(--verde-musgo);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      transition: all 0.3s ease;
+      margin-bottom: 1rem;
+    }
+
+    .audio-card:hover {
+      border-left-color: var(--acento-dorado);
+      transform: translateX(4px);
+    }
+
+    .audio-card audio {
+      width: 100%;
+      margin-top: 0.8rem;
+    }
+
+    .audio-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--verde-bosque);
+      margin-bottom: 0.2rem;
+    }
+
+    .audio-meta {
+      font-size: 0.75rem;
+      color: #aaa;
+      letter-spacing: 1px;
+    }
+
+    /* ── Animaciones específicas ── */
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rotateIn {
+      from { opacity: 0; transform: rotate(-5deg) scale(0.9); }
+      to { opacity: 1; transform: rotate(0) scale(1); }
+    }
+
+    .header-anim {
+      animation: slideDown 0.8s ease forwards;
+    }
+
+    .rotate-anim {
+      opacity: 0;
+      animation: rotateIn 0.7s ease forwards;
+    }
+
+    /* ── Podcast / featured audio ── */
+    .podcast-featured {
+      background: linear-gradient(135deg, var(--verde-bosque) 0%, #1a3012 100%);
+      padding: 3rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .podcast-featured::after {
+      content: '🎙️';
+      position: absolute;
+      right: -1rem;
+      top: -1rem;
+      font-size: 12rem;
+      opacity: 0.05;
+    }
+
+    .podcast-featured audio {
+      width: 100%;
+      margin-top: 1.5rem;
+    }
+
+    /* ── Tabla striped (multimedia) ── */
+    .tabla-multimedia th {
+      background: var(--verde-bosque);
+      color: white;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: none;
+    }
+
+    .tabla-multimedia tbody tr:nth-child(odd) {
+      background-color: rgba(143,181,106,0.07);
+    }
+
+    .tabla-multimedia tbody tr:hover {
+      background-color: rgba(201,162,39,0.1);
+      transition: background 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-text">🌿 Naturaleza</span>
+      <span class="navbar-brand-sub">en foco</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="tecnicas.html">Técnicas</a></li>
+        <li class="nav-item"><a class="nav-link" href="equipo.html">Equipo</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<header class="page-header">
+  <div class="container header-anim">
+    <p>Escucha y Mira</p>
+    <h1>Multimedia</h1>
+    <p class="mt-2">Vídeos, podcasts y sonidos de la naturaleza</p>
+  </div>
+</header>
+
+<!-- ===== VIDEO PRINCIPAL ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7 rotate-anim" style="animation-delay:0.2s">
+        <div class="video-wrapper" style="border:4px solid var(--verde-bosque)">
+          <video controls poster="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento video.
+          </video>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <p class="section-label">Documental Destacado</p>
+        <h2 class="section-title">Bosques de Niebla:<br><em>Un Año en el Robledal</em></h2>
+        <div class="divider-leaf"></div>
+        <p class="text-muted lh-lg">Cuatro estaciones en el corazón del bosque atlántico. Siguiendo la huella del corzo, el milano negro y el tritón jaspeado, este documental revela la vida oculta de uno de los ecosistemas más ricos de la Península.</p>
+        <div class="d-flex gap-3 mt-3 flex-wrap">
+          <div>
+            <small class="section-label" style="font-size:0.6rem">Duración</small>
+            <p class="mb-0 fw-bold" style="color:var(--verde-bosque)">28 min</p>
+          </div>
+          <div>
+            <small class="section-label" style="font-size:0.6rem">Año</small>
+            <p class="mb-0 fw-bold" style="color:var(--verde-bosque)">2024</p>
+          </div>
+          <div>
+            <small class="section-label" style="font-size:0.6rem">Director</small>
+            <p class="mb-0 fw-bold" style="color:var(--verde-bosque)">Carlos Mendoza</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PODCAST FEATURED ===== -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="podcast-featured">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p style="color:var(--acento-dorado);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:600">Podcast Destacado</p>
+          <h2 style="font-family:'Playfair Display',serif;color:white;font-size:2rem">El Sonido del Bosque<br><em>Amanecer en la Dehesa</em></h2>
+          <p style="color:rgba(255,255,255,0.7);line-height:1.8;margin-top:1rem">
+            Una grabación de campo de 45 minutos al amanecer en la dehesa extremeña. Canto de currucas, el llamado del milano negro y el susurro del viento entre las encinas. Perfecto para meditación o simplemente para conectar con la naturaleza.
+          </p>
+          <audio controls style="width:100%;margin-top:1rem">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento audio.
+          </audio>
+        </div>
+        <div class="col-lg-5 text-center d-none d-lg-block">
+          <div style="font-size:10rem;opacity:0.15;line-height:1">🎙️</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MÁS VÍDEOS ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="mb-5">
+      <p class="section-label">Archivo</p>
+      <h2 class="section-title">Más Documentales</h2>
+      <div class="divider-leaf"></div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-scroll-anim data-anim="animate-fadeInUp delay-1">
+        <div class="video-card">
+          <div class="video-thumb">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Tortugas">
+            <div class="play-btn">▶</div>
+            <span class="video-duration">14:23</span>
+          </div>
+          <div class="video-info">
+            <span class="badge-categoria">Marino</span>
+            <h5 style="font-family:'Playfair Display',serif;color:var(--verde-bosque);margin-top:0.5rem;font-size:1rem">Viaje de las Tortugas</h5>
+            <p class="text-muted" style="font-size:0.8rem">La migración de tortugas carey desde el Mediterráneo hasta sus zonas de desove.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-scroll-anim data-anim="animate-fadeInUp delay-3">
+        <div class="video-card">
+          <div class="video-thumb">
+            <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&q=80" alt="Osos">
+            <div class="play-btn">▶</div>
+            <span class="video-duration">22:10</span>
+          </div>
+          <div class="video-info">
+            <span class="badge-categoria">Mamíferos</span>
+            <h5 style="font-family:'Playfair Display',serif;color:var(--verde-bosque);margin-top:0.5rem;font-size:1rem">El Último Oso Pardo</h5>
+            <p class="text-muted" style="font-size:0.8rem">Seguimiento de una familia de osos en los Picos de Europa durante el otoño.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-scroll-anim data-anim="animate-fadeInUp delay-5">
+        <div class="video-card">
+          <div class="video-thumb">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Montaña">
+            <div class="play-btn">▶</div>
+            <span class="video-duration">18:45</span>
+          </div>
+          <div class="video-info">
+            <span class="badge-categoria">Paisajes</span>
+            <h5 style="font-family:'Playfair Display',serif;color:var(--verde-bosque);margin-top:0.5rem;font-size:1rem">Cumbres Nevadas</h5>
+            <p class="text-muted" style="font-size:0.8rem">Timelapse y escenas en cámara lenta de los Pirineos en invierno.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SONIDOS (múltiples audios) ===== -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <p class="section-label">Biblioteca Sonora</p>
+        <h2 class="section-title">Sonidos de la Naturaleza</h2>
+        <div class="divider-leaf"></div>
+        <p class="text-muted lh-lg">Grabaciones de campo capturadas por nuestro equipo en distintos ecosistemas de España y el extranjero. Todas sin música añadida, 100% naturales.</p>
+
+        <div class="audio-card">
+          <p class="audio-title">🌅 Amanecer en el Parque de Doñana</p>
+          <p class="audio-meta">Grabado en Huelva · Junio 2023 · 8 min</p>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento audio.
+          </audio>
+        </div>
+
+        <div class="audio-card">
+          <p class="audio-title">🌧️ Lluvia en el Hayedo</p>
+          <p class="audio-meta">Grabado en Navarra · Noviembre 2023 · 12 min</p>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento audio.
+          </audio>
+        </div>
+
+        <div class="audio-card">
+          <p class="audio-title">🦗 Noche en la Marisma</p>
+          <p class="audio-meta">Grabado en Sevilla · Agosto 2024 · 15 min</p>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento audio.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Tabla de grabaciones -->
+      <div class="col-lg-6">
+        <p class="section-label">Catálogo</p>
+        <h2 class="section-title">Todas las Grabaciones</h2>
+        <div class="divider-leaf"></div>
+
+        <div class="table-responsive">
+          <table class="table table-striped tabla-custom tabla-multimedia shadow-sm">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Ecosistema</th>
+                <th>Duración</th>
+                <th>Año</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>🌅 Amanecer en Doñana</td>
+                <td>Marisma</td>
+                <td>08:00</td>
+                <td>2023</td>
+              </tr>
+              <tr>
+                <td>🌧️ Lluvia en el Hayedo</td>
+                <td>Bosque atlántico</td>
+                <td>12:30</td>
+                <td>2023</td>
+              </tr>
+              <tr>
+                <td>🦗 Noche en la Marisma</td>
+                <td>Humedal</td>
+                <td>15:00</td>
+                <td>2024</td>
+              </tr>
+              <tr>
+                <td>🦅 Rapaces al vuelo</td>
+                <td>Sierra</td>
+                <td>06:45</td>
+                <td>2022</td>
+              </tr>
+              <tr>
+                <td>🌊 Olas y viento marino</td>
+                <td>Costa</td>
+                <td>20:00</td>
+                <td>2024</td>
+              </tr>
+              <tr>
+                <td>🐸 Ranas en el río</td>
+                <td>Ribera</td>
+                <td>10:15</td>
+                <td>2023</td>
+              </tr>
+              <tr>
+                <td>⛰️ Viento en cumbres</td>
+                <td>Alta montaña</td>
+                <td>18:00</td>
+                <td>2022</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOLVER AL INICIO ===== -->
+<div class="text-center py-4 bg-white">
+  <a href="../index.html" class="btn btn-outline-naturaleza">← Volver al Inicio</a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-custom">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="footer-brand">🌿 Naturaleza en Foco</div>
+        <p class="mt-2" style="font-size:0.8rem;opacity:0.7;line-height:1.7">Capturando la belleza efímera del mundo natural.</p>
+      </div>
+      <div class="col-md-4">
+        <h6 style="color:var(--acento-dorado);letter-spacing:3px;font-size:0.7rem;text-transform:uppercase;margin-bottom:1rem">Páginas</h6>
+        <div class="footer-links">
+          <a href="../index.html">Inicio</a>
+          <a href="galeria.html">Galería</a>
+          <a href="tecnicas.html">Técnicas</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h6 style="color:var(--acento-dorado);letter-spacing:3px;font-size:0.7rem;text-transform:uppercase;margin-bottom:1rem">Síguenos</h6>
+        <div class="footer-links">
+          <a href="#">📸 Instagram</a>
+          <a href="#">🎥 YouTube</a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p class="footer-copy text-center mb-0">© 2025 Naturaleza en Foco</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/naturaleza.js"></script>
+</body>
+</html>

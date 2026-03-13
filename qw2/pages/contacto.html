@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Naturaleza en Foco</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet">
+  <style>
+    body { padding-top: 80px; }
+
+    /* ── Info de contacto ── */
+    .contact-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-top: 3px solid var(--verde-musgo);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .contact-card:hover {
+      border-top-color: var(--acento-dorado);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .contact-label {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--acento-dorado);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--verde-bosque);
+      word-break: break-word;
+    }
+
+    /* ── Formulario avanzado ── */
+    .form-section {
+      background: var(--crema);
+      padding: 3rem;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .form-section { padding: 2rem 1.5rem; }
+    }
+
+    .form-section::before {
+      content: '✉';
+      position: absolute;
+      top: -1rem;
+      right: 2rem;
+      font-size: 8rem;
+      opacity: 0.04;
+      color: var(--verde-bosque);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .char-counter {
+      font-size: 0.7rem;
+      color: #aaa;
+      text-align: right;
+      margin-top: 0.3rem;
+    }
+
+    /* ── Mapa placeholder ── */
+    .mapa-placeholder {
+      background: linear-gradient(135deg, var(--verde-bosque) 0%, var(--verde-musgo) 100%);
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mapa-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='20' cy='20' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .mapa-pin {
+      font-size: 3rem;
+      animation: floatPin 3s ease-in-out infinite;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    @keyframes floatPin {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ── Alerta éxito ── */
+    .alert-success-custom {
+      background: linear-gradient(135deg, var(--verde-bosque), var(--verde-musgo));
+      color: white;
+      border: none;
+      border-radius: 0;
+      padding: 1.5rem;
+      display: none;
+    }
+
+    /* ── Preguntas rápidas ── */
+    .faq-quick {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--verde-claro);
+      transition: border-color 0.3s;
+    }
+
+    .faq-quick:hover {
+      border-left-color: var(--acento-dorado);
+    }
+
+    .faq-quick h5 {
+      font-size: 0.9rem;
+      color: var(--verde-bosque);
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-quick p {
+      font-size: 0.82rem;
+      color: #888;
+      margin: 0;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-text">🌿 Naturaleza</span>
+      <span class="navbar-brand-sub">en foco</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMain"
+      aria-controls="navMain"
+      aria-expanded="false"
+      aria-label="Abrir o cerrar menú de navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="tecnicas.html">Técnicas</a></li>
+        <li class="nav-item"><a class="nav-link" href="equipo.html">Equipo</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<header class="page-header">
+  <div class="container">
+    <p>Escríbenos</p>
+    <h1>Contacto</h1>
+    <p class="mt-2">Estamos encantados de saber de ti</p>
+  </div>
+</header>
+
+<!-- ===== TARJETAS DE CONTACTO ===== -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-sm-6 col-lg-3" data-scroll-anim data-anim="animate-fadeInUp delay-1">
+        <div class="contact-card">
+          <span class="contact-icon" aria-hidden="true">📧</span>
+          <p class="contact-label">Email</p>
+          <p class="contact-value">hola@naturalezaenfoco.com</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3" data-scroll-anim data-anim="animate-fadeInUp delay-2">
+        <div class="contact-card">
+          <span class="contact-icon" aria-hidden="true">📞</span>
+          <p class="contact-label">Teléfono</p>
+          <p class="contact-value">+34 954 123 456</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3" data-scroll-anim data-anim="animate-fadeInUp delay-3">
+        <div class="contact-card">
+          <span class="contact-icon" aria-hidden="true">📍</span>
+          <p class="contact-label">Ubicación</p>
+          <p class="contact-value">Sevilla, Andalucía<br>España</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3" data-scroll-anim data-anim="animate-fadeInUp delay-4">
+        <div class="contact-card">
+          <span class="contact-icon" aria-hidden="true">🕐</span>
+          <p class="contact-label">Horario</p>
+          <p class="contact-value">Lun–Vie<br>9:00 – 18:00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORMULARIO + MAPA ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- FORMULARIO -->
+      <div class="col-lg-7" data-scroll-anim data-anim="animate-fadeInLeft">
+        <p class="section-label">Escríbenos</p>
+        <h2 class="section-title">Envíanos un Mensaje</h2>
+        <div class="divider-leaf"></div>
+
+        <!-- Alerta éxito (simulada) -->
+        <div class="alert-success-custom mt-4" id="alertaExito" role="alert" aria-live="polite">
+          ✅ <strong>¡Mensaje enviado!</strong> Nos pondremos en contacto contigo pronto.
+        </div>
+
+        <div class="form-section mt-4">
+          <form class="form-custom" id="formularioContacto" onsubmit="enviarFormulario(event)">
+
+            <!-- Nombre y Apellidos -->
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <label class="form-label" for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name" required>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Tus apellidos" autocomplete="family-name">
+              </div>
+            </div>
+
+            <!-- Email y Teléfono -->
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <label class="form-label" for="email">Correo electrónico *</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="tu@email.com" autocomplete="email" required>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="telefono">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
+              </div>
+            </div>
+
+            <!-- Asunto -->
+            <div class="mb-3">
+              <label class="form-label" for="asunto">Asunto *</label>
+              <select class="form-select" id="asunto" name="asunto" required>
+                <option value="" disabled selected>Selecciona un motivo</option>
+                <option value="colaboracion">Colaboración fotográfica</option>
+                <option value="compra">Compra de fotografías</option>
+                <option value="talleres">Talleres y formación</option>
+                <option value="prensa">Prensa y medios</option>
+                <option value="otros">Otros</option>
+              </select>
+            </div>
+
+            <!-- Experiencia -->
+            <div class="mb-3">
+              <label class="form-label" for="nivPrincipiante">Nivel de experiencia</label>
+              <div class="d-flex gap-3 flex-wrap mt-1">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="nivel" id="nivPrincipiante" value="principiante">
+                  <label class="form-check-label" for="nivPrincipiante" style="font-size:0.85rem">Principiante</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="nivel" id="nivIntermedio" value="intermedio">
+                  <label class="form-check-label" for="nivIntermedio" style="font-size:0.85rem">Intermedio</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="nivel" id="nivAvanzado" value="avanzado">
+                  <label class="form-check-label" for="nivAvanzado" style="font-size:0.85rem">Avanzado</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="mb-3">
+              <label class="form-label" for="mensaje">Mensaje *</label>
+              <textarea
+                class="form-control"
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                placeholder="Cuéntanos en qué podemos ayudarte…"
+                maxlength="500"
+                required
+                oninput="contarChars()"
+                aria-describedby="contadorMensaje"></textarea>
+              <div class="char-counter" id="contadorMensaje"><span id="charCount">0</span> / 500 caracteres</div>
+            </div>
+
+            <!-- Intereses (checkboxes) -->
+            <div class="mb-4">
+              <label class="form-label d-block">Áreas de interés</label>
+              <div class="row g-2">
+                <div class="col-6 col-sm-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="intAves" name="intereses" value="aves">
+                    <label class="form-check-label" for="intAves" style="font-size:0.85rem">🦅 Aves</label>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="intMamiferos" name="intereses" value="mamiferos">
+                    <label class="form-check-label" for="intMamiferos" style="font-size:0.85rem">🦊 Mamíferos</label>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="intMacro" name="intereses" value="macro">
+                    <label class="form-check-label" for="intMacro" style="font-size:0.85rem">🦋 Macro</label>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="intPaisajes" name="intereses" value="paisajes">
+                    <label class="form-check-label" for="intPaisajes" style="font-size:0.85rem">🏔️ Paisajes</label>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="intMarino" name="intereses" value="marino">
+                    <label class="form-check-label" for="intMarino" style="font-size:0.85rem">🌊 Marino</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Privacidad -->
+            <div class="mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="privacidad" name="privacidad" required>
+                <label class="form-check-label" for="privacidad" style="font-size:0.8rem;color:#666">
+                  He leído y acepto la <a href="javascript:void(0)" style="color:var(--verde-musgo)">política de privacidad</a> *
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-naturaleza w-100">
+              Enviar Mensaje ✉
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- LATERAL INFO + MAPA -->
+      <div class="col-lg-5" data-scroll-anim data-anim="animate-fadeInRight">
+        <p class="section-label">Encuéntranos</p>
+        <h2 class="section-title">Nuestra Sede</h2>
+        <div class="divider-leaf"></div>
+
+        <!-- Mapa placeholder -->
+        <div class="mapa-placeholder mb-4" aria-label="Ubicación de la sede en Sevilla, España">
+          <div style="position:relative;z-index:1">
+            <span class="mapa-pin" aria-hidden="true">📍</span>
+            <h4 style="font-family:'Playfair Display',serif">Sevilla, España</h4>
+            <p style="font-size:0.8rem;opacity:0.8;letter-spacing:1px">Calle Betis, 42 — 41010</p>
+          </div>
+        </div>
+
+        <!-- FAQs rápidas -->
+        <h4 style="font-family:'Playfair Display',serif;color:var(--verde-bosque);font-size:1.2rem;margin-bottom:1.5rem">Preguntas Frecuentes</h4>
+
+        <div class="faq-quick">
+          <h5>¿Ofrecéis talleres presenciales?</h5>
+          <p>Sí, organizamos salidas de campo en Andalucía y talleres teórico-prácticos en nuestra sede de Sevilla cada trimestre.</p>
+        </div>
+
+        <div class="faq-quick">
+          <h5>¿Puedo comprar impresiones de vuestras fotos?</h5>
+          <p>Por supuesto. Contáctanos indicando qué imagen te interesa y te preparamos un presupuesto personalizado en diferentes tamaños y materiales.</p>
+        </div>
+
+        <div class="faq-quick">
+          <h5>¿Aceptáis fotógrafos para colaborar?</h5>
+          <p>Siempre estamos abiertos a nuevas colaboraciones. Envíanos tu portfolio y cuéntanos tu historia.</p>
+        </div>
+
+        <!-- Social links -->
+        <div class="mt-4 d-flex gap-3 flex-wrap">
+          <a href="javascript:void(0)" class="btn btn-naturaleza btn-sm" style="font-size:0.7rem" aria-label="Instagram">📸 Instagram</a>
+          <a href="javascript:void(0)" class="btn btn-outline-naturaleza btn-sm" style="font-size:0.7rem" aria-label="Twitter">🐦 Twitter</a>
+          <a href="javascript:void(0)" class="btn btn-outline-naturaleza btn-sm" style="font-size:0.7rem" aria-label="YouTube">🎥 YouTube</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOLVER AL INICIO ===== -->
+<div class="text-center py-4 bg-light">
+  <a href="../index.html" class="btn btn-outline-naturaleza">← Volver al Inicio</a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-custom">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="footer-brand">🌿 Naturaleza en Foco</div>
+        <p class="mt-2" style="font-size:0.8rem;opacity:0.7;line-height:1.7">Capturando la belleza efímera del mundo natural.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h6 style="color:var(--acento-dorado);letter-spacing:3px;font-size:0.7rem;text-transform:uppercase;margin-bottom:1rem">Páginas</h6>
+        <div class="footer-links">
+          <a href="../index.html">Inicio</a>
+          <a href="galeria.html">Galería</a>
+          <a href="tecnicas.html">Técnicas</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h6 style="color:var(--acento-dorado);letter-spacing:3px;font-size:0.7rem;text-transform:uppercase;margin-bottom:1rem">Síguenos</h6>
+        <div class="footer-links">
+          <a href="javascript:void(0)" aria-label="Instagram">📸 Instagram</a>
+          <a href="javascript:void(0)" aria-label="YouTube">🎥 YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <p class="footer-copy text-center mb-0">© 2025 Naturaleza en Foco</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/naturaleza.js"></script>
+<script>
+  function contarChars() {
+    const msg = document.getElementById('mensaje');
+    document.getElementById('charCount').textContent = msg.value.length;
+  }
+
+  function enviarFormulario(e) {
+    e.preventDefault();
+    const alerta = document.getElementById('alertaExito');
+    alerta.style.display = 'block';
+    document.getElementById('formularioContacto').reset();
+    document.getElementById('charCount').textContent = '0';
+    alerta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => {
+      alerta.style.display = 'none';
+    }, 5000);
+  }
+</script>
+</body>
+</html>

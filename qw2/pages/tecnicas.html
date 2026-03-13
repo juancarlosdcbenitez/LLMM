@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Técnicas — Naturaleza en Foco</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet">
+  <style>
+    body { padding-top: 70px; }
+
+    /* ── Acordeón personalizado ── */
+    .accordion-naturaleza .accordion-button {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      background: white;
+      color: var(--verde-bosque);
+      border-radius: 0 !important;
+      font-size: 0.95rem;
+    }
+
+    .accordion-naturaleza .accordion-button:not(.collapsed) {
+      background: var(--verde-bosque);
+      color: white;
+      box-shadow: none;
+    }
+
+    .accordion-naturaleza .accordion-button:not(.collapsed)::after {
+      filter: invert(1);
+    }
+
+    .accordion-naturaleza .accordion-item {
+      border: 1px solid rgba(90,122,58,0.2);
+      border-radius: 0 !important;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Tabla striped ── */
+    .tabla-ajustes th {
+      background: var(--verde-bosque) !important;
+      color: white;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      border: none;
+    }
+
+    .tabla-ajustes td {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.9rem;
+      vertical-align: middle;
+      border-color: rgba(90,122,58,0.15);
+    }
+
+    .tabla-ajustes tbody tr:nth-child(odd) {
+      background-color: rgba(143,181,106,0.08);
+    }
+
+    .tabla-ajustes tbody tr:hover {
+      background-color: rgba(201,162,39,0.12) !important;
+      transition: background 0.2s;
+    }
+
+    .nivel-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-radius: 20px;
+    }
+
+    .nivel-facil { background: #d4edda; color: #155724; }
+    .nivel-medio { background: #fff3cd; color: #856404; }
+    .nivel-avanzado { background: #f8d7da; color: #721c24; }
+
+    /* ── Progreso barras ── */
+    .progress-naturaleza .progress-bar {
+      background: linear-gradient(90deg, var(--verde-bosque), var(--verde-claro));
+      border-radius: 0;
+      transition: width 1.5s ease;
+    }
+
+    .progress-naturaleza {
+      height: 8px;
+      border-radius: 0;
+      background: rgba(0,0,0,0.08);
+    }
+
+    /* Skill box */
+    .skill-box {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-text">🌿 Naturaleza</span>
+      <span class="navbar-brand-sub">en foco</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tecnicas.html">Técnicas</a></li>
+        <li class="nav-item"><a class="nav-link" href="equipo.html">Equipo</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<header class="page-header">
+  <div class="container">
+    <p>Aprende</p>
+    <h1>Técnicas de Fotografía</h1>
+    <p class="mt-2">Guías y consejos para capturar la naturaleza</p>
+  </div>
+</header>
+
+<!-- ===== INTRO + HABILIDADES ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <div class="col-lg-6" data-scroll-anim data-anim="animate-fadeInLeft">
+        <p class="section-label">Guía Básica</p>
+        <h2 class="section-title">Empieza con<br>buen pie</h2>
+        <div class="divider-leaf"></div>
+        <p class="text-muted lh-lg">La fotografía de naturaleza requiere paciencia, conocimiento del entorno y dominio técnico de tu equipo. Con práctica constante y los ajustes correctos, podrás capturar imágenes impactantes incluso en condiciones difíciles.</p>
+
+        <!-- Tips -->
+        <div class="mt-4">
+          <div class="tip-card">
+            <span class="tip-number">01</span>
+            <strong style="display:block;font-size:0.85rem;letter-spacing:1px;color:var(--verde-bosque);text-transform:uppercase">La Luz lo es Todo</strong>
+            <p class="mb-0 mt-1 text-muted" style="font-size:0.85rem">Sale al campo en la "hora dorada" (30 min tras el amanecer o antes del atardecer) para obtener luz cálida y suave.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-number">02</span>
+            <strong style="display:block;font-size:0.85rem;letter-spacing:1px;color:var(--verde-bosque);text-transform:uppercase">Conoce a tu Sujeto</strong>
+            <p class="mb-0 mt-1 text-muted" style="font-size:0.85rem">Investiga los hábitos del animal. Saber dónde come, duerme y se desplaza te permite anticipar el momento perfecto.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-number">03</span>
+            <strong style="display:block;font-size:0.85rem;letter-spacing:1px;color:var(--verde-bosque);text-transform:uppercase">Usa el Modo Ráfaga</strong>
+            <p class="mb-0 mt-1 text-muted" style="font-size:0.85rem">Con animales en movimiento, dispara en ráfaga continua. Entre muchos fotogramas siempre habrá uno perfecto.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habilidades -->
+      <div class="col-lg-6" data-scroll-anim data-anim="animate-fadeInRight">
+        <div style="background:var(--crema);padding:2rem">
+          <p class="section-label">Habilidades Clave</p>
+          <h3 class="section-title" style="font-size:1.8rem">¿Dónde estás<br>en tu camino?</h3>
+          <div class="divider-leaf mt-2"></div>
+
+          <div class="skill-box">
+            <div class="skill-label"><span>Composición</span><span style="color:var(--verde-musgo);font-weight:600">85%</span></div>
+            <div class="progress progress-naturaleza"><div class="progress-bar" style="width:0" data-width="85"></div></div>
+          </div>
+          <div class="skill-box">
+            <div class="skill-label"><span>Exposición Manual</span><span style="color:var(--verde-musgo);font-weight:600">70%</span></div>
+            <div class="progress progress-naturaleza"><div class="progress-bar" style="width:0" data-width="70"></div></div>
+          </div>
+          <div class="skill-box">
+            <div class="skill-label"><span>Fotografía Macro</span><span style="color:var(--verde-musgo);font-weight:600">60%</span></div>
+            <div class="progress progress-naturaleza"><div class="progress-bar" style="width:0" data-width="60"></div></div>
+          </div>
+          <div class="skill-box">
+            <div class="skill-label"><span>Postprocesado RAW</span><span style="color:var(--verde-musgo);font-weight:600">75%</span></div>
+            <div class="progress progress-naturaleza"><div class="progress-bar" style="width:0" data-width="75"></div></div>
+          </div>
+          <div class="skill-box">
+            <div class="skill-label"><span>Seguimiento de Fauna</span><span style="color:var(--verde-musgo);font-weight:600">90%</span></div>
+            <div class="progress progress-naturaleza"><div class="progress-bar" style="width:0" data-width="90"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== TABLA STRIPED ===== -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Referencia Técnica</p>
+      <h2 class="section-title">Ajustes por Situación</h2>
+      <div class="divider-leaf mx-auto"></div>
+      <p class="text-muted">Configuraciones recomendadas de cámara según el tipo de fotografía</p>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped tabla-custom tabla-ajustes shadow-sm">
+        <thead>
+          <tr>
+            <th>Situación</th>
+            <th>ISO</th>
+            <th>Apertura</th>
+            <th>Velocidad</th>
+            <th>Enfoque</th>
+            <th>Nivel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🦅 Ave en vuelo</strong></td>
+            <td>400–1600</td>
+            <td>f/5.6 – f/8</td>
+            <td>1/2000 s o más</td>
+            <td>AF Continuo</td>
+            <td><span class="nivel-badge nivel-avanzado">Avanzado</span></td>
+          </tr>
+          <tr>
+            <td><strong>🦊 Mamífero estático</strong></td>
+            <td>100–400</td>
+            <td>f/4 – f/5.6</td>
+            <td>1/250 s</td>
+            <td>AF Zona</td>
+            <td><span class="nivel-badge nivel-medio">Medio</span></td>
+          </tr>
+          <tr>
+            <td><strong>🦋 Macro insectos</strong></td>
+            <td>100–200</td>
+            <td>f/8 – f/16</td>
+            <td>1/200 s</td>
+            <td>MF / AF Puntual</td>
+            <td><span class="nivel-badge nivel-avanzado">Avanzado</span></td>
+          </tr>
+          <tr>
+            <td><strong>🌄 Paisaje amanecer</strong></td>
+            <td>100</td>
+            <td>f/8 – f/11</td>
+            <td>1/60 s o trípode</td>
+            <td>AF Puntual / MF</td>
+            <td><span class="nivel-badge nivel-facil">Fácil</span></td>
+          </tr>
+          <tr>
+            <td><strong>🌊 Mar y olas</strong></td>
+            <td>100–400</td>
+            <td>f/8</td>
+            <td>1/1000 s (acción) o 1s+ (seda)</td>
+            <td>AF Zona amplia</td>
+            <td><span class="nivel-badge nivel-medio">Medio</span></td>
+          </tr>
+          <tr>
+            <td><strong>🌙 Noche / Astrofoto</strong></td>
+            <td>1600–6400</td>
+            <td>f/2.8 – f/4</td>
+            <td>15–30 s</td>
+            <td>MF a infinito</td>
+            <td><span class="nivel-badge nivel-avanzado">Avanzado</span></td>
+          </tr>
+          <tr>
+            <td><strong>🌧️ Día nublado</strong></td>
+            <td>200–800</td>
+            <td>f/5.6 – f/8</td>
+            <td>1/500 s</td>
+            <td>AF Continuo</td>
+            <td><span class="nivel-badge nivel-facil">Fácil</span></td>
+          </tr>
+          <tr>
+            <td><strong>🌿 Flora / Botánica</strong></td>
+            <td>100–200</td>
+            <td>f/4 – f/8</td>
+            <td>1/250 s</td>
+            <td>AF Puntual / MF</td>
+            <td><span class="nivel-badge nivel-facil">Fácil</span></td>
+          </tr>
+          <tr>
+            <td><strong>🐟 Bajo el agua</strong></td>
+            <td>200–800</td>
+            <td>f/5.6 – f/11</td>
+            <td>1/125 s</td>
+            <td>AF Continuo</td>
+            <td><span class="nivel-badge nivel-avanzado">Avanzado</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACORDEÓN PREGUNTAS ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-5">
+          <p class="section-label">Preguntas Frecuentes</p>
+          <h2 class="section-title">Resuelve tus Dudas</h2>
+          <div class="divider-leaf mx-auto"></div>
+        </div>
+        <div class="accordion accordion-naturaleza" id="faqAcordeon">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                ¿Qué objetivo necesito para fotografiar aves?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAcordeon">
+              <div class="accordion-body text-muted lh-lg">
+                Para aves en campo abierto se recomiendan focales entre 400 mm y 600 mm. Un 100-400 mm f/4.5-5.6 es un excelente punto de partida: versátil, manejable y con buena calidad óptica. Si tu presupuesto es limitado, considera un 150-600 mm de fabricantes terceros.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                ¿RAW o JPEG para naturaleza?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAcordeon">
+              <div class="accordion-body text-muted lh-lg">
+                Siempre RAW. Los archivos RAW conservan toda la información de la toma, permitiéndote recuperar luces quemadas, sombras oscuras y corregir el balance de blancos en postproceso. El JPEG comprime y descarta información de manera irreversible.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                ¿Cómo enfocar un animal que se mueve rápidamente?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAcordeon">
+              <div class="accordion-body text-muted lh-lg">
+                Usa el AF Continuo (AI Servo en Canon, AF-C en Nikon/Sony) y activa el seguimiento de sujeto si tu cámara lo ofrece. Configura tu zona de enfoque en "Área amplia" y practica haciendo seguimiento del sujeto antes de disparar. La detección de animales con IA en cámaras modernas es un gran aliado.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                ¿Necesito permiso para fotografiar en reservas naturales?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAcordeon">
+              <div class="accordion-body text-muted lh-lg">
+                Depende del espacio. En parques nacionales y reservas integrales es habitual necesitar permiso especial, especialmente si usas trípode o vas a comercializar las imágenes. Consulta siempre con la administración competente antes de tu visita y respeta las zonas de exclusión.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOLVER AL INICIO ===== -->
+<div class="text-center py-4 bg-light">
+  <a href="../index.html" class="btn btn-outline-naturaleza">← Volver al Inicio</a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-custom">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="footer-brand">🌿 Naturaleza en Foco</div>
+        <p class="mt-2" style="font-size:0.8rem;opacity:0.7;line-height:1.7">Capturando la belleza efímera del mundo natural.</p>
+      </div>
+      <div class="col-md-4">
+        <h6 style="color:var(--acento-dorado);letter-spacing:3px;font-size:0.7rem;text-transform:uppercase;margin-bottom:1rem">Páginas</h6>
+        <div class="footer-links">
+          <a href="../index.html">Inicio</a>
+          <a href="galeria.html">Galería</a>
+          <a href="tecnicas.html">Técnicas</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h6 style="color:var(--acento-dorado);letter-spacing:3px;font-size:0.7rem;text-transform:uppercase;margin-bottom:1rem">Síguenos</h6>
+        <div class="footer-links">
+          <a href="#">📸 Instagram</a>
+          <a href="#">🎥 YouTube</a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p class="footer-copy text-center mb-0">© 2025 Naturaleza en Foco</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/naturaleza.js"></script>
+<script>
+  // Animar barras de progreso al hacer scroll
+  const progressBars = document.querySelectorAll('.progress-bar[data-width]');
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.dataset.width + '%';
+        progressObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  progressBars.forEach(bar => progressObserver.observe(bar));
+</script>
+</body>
+</html>

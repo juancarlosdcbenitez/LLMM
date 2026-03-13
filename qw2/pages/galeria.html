@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería — Naturaleza en Foco</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet">
+  <style>
+    body { padding-top: 80px; }
+
+    /* ── Animaciones específicas galería ── */
+    .filtro-btn {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid var(--verde-musgo);
+      color: var(--verde-musgo);
+      background: transparent;
+      padding: 0.4rem 1.2rem;
+      border-radius: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filtro-btn:hover,
+    .filtro-btn.activo {
+      background: var(--verde-musgo);
+      color: white;
+    }
+
+    .filtro-btn:focus-visible {
+      outline: 2px solid var(--acento-dorado);
+      outline-offset: 2px;
+    }
+
+    /* Galería masonry con CSS columns */
+    .galeria-masonry {
+      column-count: 3;
+      column-gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .galeria-masonry { column-count: 2; }
+    }
+
+    @media (max-width: 480px) {
+      .galeria-masonry { column-count: 1; }
+    }
+
+    .galeria-masonry .galeria-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .galeria-masonry .galeria-item img {
+      height: auto;
+      min-height: 180px;
+      max-height: 420px;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Entrada escalonada */
+    .galeria-item {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .galeria-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Zoom modal */
+    .modal-galeria .modal-content {
+      background: rgba(10,15,10,0.97);
+      border: 1px solid var(--acento-dorado);
+      border-radius: 0;
+    }
+
+    .modal-galeria .modal-header {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .modal-galeria .btn-close {
+      filter: invert(1);
+    }
+
+    /* Bounce animation en badges de la galería */
+    @keyframes bounceIn {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.1); }
+      70% { transform: scale(0.95); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .galeria-overlay .badge-overlay {
+      animation: bounceIn 0.5s ease forwards;
+      animation-delay: 0.1s;
+      opacity: 0;
+    }
+
+    .galeria-item:hover .badge-overlay {
+      opacity: 1;
+    }
+
+    /* Shine effect en hover */
+    .galeria-item::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: rgba(255,255,255,0.15);
+      transform: skewX(-20deg);
+      transition: left 0.6s ease;
+      pointer-events: none;
+    }
+
+    .galeria-item:hover::after {
+      left: 120%;
+    }
+
+    /* Pulsating new badge */
+    .badge-new {
+      animation: pulse-verde 2s infinite;
+      background: var(--acento-dorado);
+      color: var(--verde-bosque);
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">
+      <span class="navbar-brand-text">🌿 Naturaleza</span>
+      <span class="navbar-brand-sub">en foco</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMain"
+      aria-controls="navMain"
+      aria-expanded="false"
+      aria-label="Abrir o cerrar menú de navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link active" href="galeria.html" aria-current="page">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="tecnicas.html">Técnicas</a></li>
+        <li class="nav-item"><a class="nav-link" href="equipo.html">Equipo</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<header class="page-header">
+  <div class="container">
+    <p>Explora</p>
+    <h1>Galería <span class="badge badge-new ms-2">Nueva</span></h1>
+    <p class="mt-2">Más de 1.200 fotografías organizadas por categoría</p>
+  </div>
+</header>
+
+<!-- ===== FILTROS ===== -->
+<section class="py-4 bg-white border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap gap-2 justify-content-center" role="toolbar" aria-label="Filtros de la galería">
+      <button class="filtro-btn activo" type="button" onclick="filtrar('todos', this)" aria-pressed="true">Todos</button>
+      <button class="filtro-btn" type="button" onclick="filtrar('aves', this)" aria-pressed="false">🦅 Aves</button>
+      <button class="filtro-btn" type="button" onclick="filtrar('mamiferos', this)" aria-pressed="false">🦊 Mamíferos</button>
+      <button class="filtro-btn" type="button" onclick="filtrar('macro', this)" aria-pressed="false">🦋 Macro</button>
+      <button class="filtro-btn" type="button" onclick="filtrar('paisajes', this)" aria-pressed="false">🏔️ Paisajes</button>
+      <button class="filtro-btn" type="button" onclick="filtrar('marino', this)" aria-pressed="false">🐋 Marino</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERÍA MASONRY ===== -->
+<section class="py-5">
+  <div class="container">
+    <div class="galeria-masonry" id="galeriaContainer">
+
+      <div class="galeria-item" data-cat="aves" tabindex="0" role="img" aria-label="Águila Real, categoría Aves">
+        <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=600&q=80" alt="Águila real" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Aves</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Águila Real</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="mamiferos" tabindex="0" role="img" aria-label="Zorro Rojo, categoría Mamíferos">
+        <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=600&q=80" alt="Zorro" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Mamíferos</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Zorro Rojo</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="macro" tabindex="0" role="img" aria-label="Mariposa Monarca, categoría Macro">
+        <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc5e?w=600&q=80" alt="Mariposa" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Macro</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Mariposa Monarca</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="paisajes" tabindex="0" role="img" aria-label="Bosque Nórdico, categoría Paisajes">
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="Bosque" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Paisajes</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Bosque Nórdico</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="marino" tabindex="0" role="img" aria-label="Costa Salvaje, categoría Marino">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Costa" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Marino</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Costa Salvaje</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="aves" tabindex="0" role="img" aria-label="Flamenco Rosa, categoría Aves">
+        <img src="https://images.unsplash.com/photo-1568562037135-bf31ed3b9f02?w=600&q=80" alt="Flamenco" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Aves</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Flamenco Rosa</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="mamiferos" tabindex="0" role="img" aria-label="Oso Pardo, categoría Mamíferos">
+        <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&q=80" alt="Oso" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Mamíferos</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Oso Pardo</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="macro" tabindex="0" role="img" aria-label="Abeja en Flor, categoría Macro">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Abeja" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Macro</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Abeja en Flor</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="paisajes" tabindex="0" role="img" aria-label="Cumbres Nevadas, categoría Paisajes">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Montaña" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Paisajes</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Cumbres Nevadas</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="marino" tabindex="0" role="img" aria-label="Tortuga Carey, categoría Marino">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Tortuga marina" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Marino</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Tortuga Carey</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="aves" tabindex="0" role="img" aria-label="Lechuza Común, categoría Aves">
+        <img src="https://images.unsplash.com/photo-1591608971362-f08b2a75731a?w=600&q=80" alt="Lechuza" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Aves</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Lechuza Común</small>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-cat="paisajes" tabindex="0" role="img" aria-label="Valle Alpino, categoría Paisajes">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Valle" loading="lazy">
+        <div class="galeria-overlay">
+          <span class="badge-overlay badge-categoria mb-2">Paisajes</span>
+          <div class="galeria-icon" aria-hidden="true">🔍</div>
+          <small class="mt-2" style="letter-spacing:1px">Valle Alpino</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOLVER AL INICIO ===== -->
+<div class="text-center py-4 bg-light">
+  <a href="../index.html" class="btn btn-outline-naturaleza">← Volver al Inicio</a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-custom">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="footer-brand">🌿 Naturaleza en Foco</div>
+        <p class="mt-2" style="font-size:0.8rem;opacity:0.7;line-height:1.7">Capturando la belleza efímera del mundo natural.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h6 style="color:var(--acento-dorado);letter-spacing:3px;font-size:0.7rem;text-transform:uppercase;margin-bottom:1rem">Páginas</h6>
+        <div class="footer-links">
+          <a href="../index.html">Inicio</a>
+          <a href="galeria.html">Galería</a>
+          <a href="tecnicas.html">Técnicas</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h6 style="color:var(--acento-dorado);letter-spacing:3px;font-size:0.7rem;text-transform:uppercase;margin-bottom:1rem">Síguenos</h6>
+        <div class="footer-links">
+          <a href="javascript:void(0)" aria-label="Instagram">📸 Instagram</a>
+          <a href="javascript:void(0)" aria-label="YouTube">🎥 YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <p class="footer-copy text-center mb-0">© 2025 Naturaleza en Foco</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ── Scroll animation de entrada
+  const items = document.querySelectorAll('.galeria-item');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    items.forEach(item => observer.observe(item));
+  } else {
+    items.forEach(item => item.classList.add('visible'));
+  }
+
+  // ── Filtro por categoría
+  function filtrar(cat, btn) {
+    document.querySelectorAll('.filtro-btn').forEach(b => {
+      b.classList.remove('activo');
+      b.setAttribute('aria-pressed', 'false');
+    });
+
+    btn.classList.add('activo');
+    btn.setAttribute('aria-pressed', 'true');
+
+    document.querySelectorAll('.galeria-item').forEach(item => {
+      const visible = cat === 'todos' || item.dataset.cat === cat;
+      item.style.display = visible ? 'block' : 'none';
+
+      if (visible) {
+        item.classList.remove('visible');
+        setTimeout(() => item.classList.add('visible'), 50);
+      }
+    });
+  }
+</script>
+</body>
+</html>
