@@ -18,6 +18,6 @@ Este repositorio incluye las actividades llevadas a cabo en el módulo de *Lengu
 
 ### Quarterly Work - Bootstrap Website
 
-[Práctica de Bootstrap](https://juancarlosdcbenitez.github.io/LLMM/qw2/index.html)
-[Enlace a los archivos de Bootstrap](https://juancarlosdcbenitez.github.io/LLMM/qw2/)
+[Práctica de Bootstrap](https://juancarlosdcbenitez.github.io/LLMM/qw2/index.html) |
+[Enlace a los archivos de Bootstrap](qw2)
 
