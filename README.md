@@ -16,10 +16,8 @@ Este repositorio incluye las actividades llevadas a cabo en el módulo de *Lengu
 | [Ejercicios de CSS](Tema1/CSS/) | Ejercicios de CSS |
 | [Trabajo final 1ª evaluación](https://juancarlosdcbenitez.github.io/LLMM/Tema1/QUARTERLYWORK-1EV/index.html) | Quarterlywork |
 
-### Quarterly Work - Bootstrap Website
 
-[Práctica de Bootstrap]() |
-[Enlace a los archivos de Bootstrap](qw2)
+### Segundo trimestre
 
 | Ejercicio | Descripción |
 |-----------|-------------|
