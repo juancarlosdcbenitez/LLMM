@@ -21,8 +21,8 @@ Este repositorio incluye las actividades llevadas a cabo en el módulo de *Lengu
 
 | Ejercicio | Descripción |
 |-----------|-------------|
-| [Ejercicios de JavaScript](Tema1/ejercicio1.html) | Página web sencilla con encabezado y párrafo |
-| [Ejercicios de HTML DOM](Tema1/ejercicio2.xml)  | Documento XML con un par de libros |
-| [Ejercicios de XML](Tema1/ejercicio3.md)   | Explicación y ejemplo de SVG |
-| [Ejercicios de XML DOM](Tema1/ejercicio4/README.md) | Prueba de Markdown |
-| [Ejercicios de AJAX](Tema1/HTML/)
+| [Ejercicios de JavaScript](Tema1/ejercicio1.html) | Ejercicios de JavaScript |
+| [Ejercicios de HTML DOM](Tema1/ejercicio2.xml)  | Ejercicios de HTML DOM |
+| [Ejercicios de XML](Tema1/ejercicio3.md)   | Ejercicios de XML |
+| [Ejercicios de XML DOM](Tema1/ejercicio4/README.md) | Ejercicios de XML DOM |
+| [Ejercicios de AJAX](Tema1/HTML/) | Ejercicios de AJAX |
