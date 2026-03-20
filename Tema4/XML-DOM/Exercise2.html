@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML DOM - Exercise 2</title>
+</head>
+<body>
+    <h2>XML DOM's Exercise 2</h2>
+    <p id="demo"></p>
+
+    <script>
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+
+    const xmlDoc = this.responseXML;
+
+    titulos = "";
+    n = xmlDoc.getElementsByTagName("TITLE").length;
+    for(i = 0; i < n; i++)
+        titulos += xmlDoc.getElementsByTagName("TITLE")[i].childNodes[0].nodeValue + "<br>";
+
+    precios = "";
+    n = xmlDoc.getElementsByTagName("PRICE").length;
+    for(i = 0; i < n; i++)
+        precios += xmlDoc.getElementsByTagName("PRICE")[i].childNodes[0].nodeValue + "<br>";
+
+    companias = "";
+    n = xmlDoc.getElementsByTagName("COMPANY").length;
+    for(i = 0; i < n; i++)
+        companias += xmlDoc.getElementsByTagName("COMPANY")[i].childNodes[0].nodeValue + "<br>";
+
+    document.getElementById("demo").innerHTML =
+        "<b>Títulos:</b><br>" + titulos +
+        "<br><b>Precios:</b><br>" + precios +
+        "<br><b>Compañías:</b><br>" + companias;
+    }
+
+    xhttp.open("GET", "https://www.w3schools.com/js/cd_catalog.xml");
+    xhttp.send();
+    </script>
+</body>
+</html>
