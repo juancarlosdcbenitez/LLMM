@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX - Exercise 1</title>
+</head>
+<body>
+    <h2>Mostrar una tabla con AJAX</h2>
+    <h3>Tabla con país, compañía, precio y año</h3>
+    <div id="tabla"></div>
+    <h3>Mismo contenido usando DIVs</h3>
+    <div id="divs"></div>
+
+    <script>
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        const xmlDoc = this.responseXML;
+        x = xmlDoc.getElementsByTagName("CD");
+        tabla = "<table border='1'>";
+        tabla += "<tr><th>País</th><th>Compañía</th><th>Precio</th><th>Año</th></tr>";
+        divs = "<div style='display:table;border:1px solid black;'>";
+        
+        for(i = 0; i < x.length; i++) {
+            country = x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue;
+            company = x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue;
+            price   = x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue;
+            year    = x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+
+            tabla += "<tr><td>" + country + "</td><td>" + company + "</td><td>" + price + "</td><td>" + year + "</td></tr>";
+            divs += "<div style='display:table-row;'>";
+            divs += "<div style='display:table-cell;border:1px solid black;padding:4px;'>" + country + "</div>";
+            divs += "<div style='display:table-cell;border:1px solid black;padding:4px;'>" + company + "</div>";
+            divs += "<div style='display:table-cell;border:1px solid black;padding:4px;'>" + price + "</div>";
+            divs += "<div style='display:table-cell;border:1px solid black;padding:4px;'>" + year + "</div>";
+            divs += "</div>";
+        }
+        tabla += "</table>";
+        divs += "</div>";
+        document.getElementById("tabla").innerHTML = tabla;
+        document.getElementById("divs").innerHTML = divs;
+    }
+    xhttp.open("GET", "https://www.w3schools.com/js/cd_catalog.xml");
+    xhttp.send();
+    </script>
+</body>
+</html>
