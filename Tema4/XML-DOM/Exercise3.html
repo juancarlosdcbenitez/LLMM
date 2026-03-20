@@ -15,33 +15,36 @@
 
         const xmlDoc = this.responseXML;
 
-        titulo1 = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
-        titulos = "";
-        n = document.getElementsByTagName("title").length;
-        for(i = 0; i < n; i++)
-            titulos += document.getElementsByTagName("title")[i].childNodes[0].nodeValue + "<br>";
-        
-        numAtributos = document.getElementsByTagName("book")[3].attributes.length;
-        
-        valoresAtributos = "";
-        a = document.getElementsByTagName("book")[3].attributes;
-        for(i = 0; i < a.length; i++)
+        let titulo1 = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+
+        let titulos = "";
+        let n = xmlDoc.getElementsByTagName("title").length;
+        for(let i = 0; i < n; i++)
+            titulos += xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue + "<br>";
+
+        let numAtributos = xmlDoc.getElementsByTagName("book")[3].attributes.length;
+
+        let valoresAtributos = "";
+        let a = xmlDoc.getElementsByTagName("book")[3].attributes;
+        for(let i = 0; i < a.length; i++)
             valoresAtributos += a[i].nodeValue + "<br>";
 
-        numAutores = document.getElementsByTagName("book")[2].getElementsByTagName("author").length;
-        autores = "";
-        a = document.getElementsByTagName("book")[2].getElementsByTagName("author");
-        for(i = 0; i < a.length; i++)
-            autores += a[i].childNodes[0].nodeValue + "<br>";
+        let numAutores = xmlDoc.getElementsByTagName("book")[2].getElementsByTagName("author").length;
 
-        x = document.getElementsByTagName("book");
-        tabla = "<table border='1'>";
+        let autores = "";
+        let autoresNodes = xmlDoc.getElementsByTagName("book")[2].getElementsByTagName("author");
+        for(let i = 0; i < autoresNodes.length; i++)
+            autores += autoresNodes[i].childNodes[0].nodeValue + "<br>";
+
+        let x = xmlDoc.getElementsByTagName("book");
+        let tabla = "<table border='1'>";
         tabla += "<tr><th>Título</th><th>Autor</th><th>Precio</th><th>Año</th></tr>";
-        for(i = 0; i < x.length; i++) {
-            titulo = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-            autor  = x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
-            precio = x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
-            year   = x[i].getElementsByTagName("year")[0].childNodes[0].nodeValue;
+
+        for(let i = 0; i < x.length; i++) {
+            let titulo = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            let autor  = x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+            let precio = x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+            let year   = x[i].getElementsByTagName("year")[0].childNodes[0].nodeValue;
 
             tabla += "<tr><td>" + titulo + "</td><td>" + autor + "</td><td>" + precio + "</td><td>" + year + "</td></tr>";
         }
