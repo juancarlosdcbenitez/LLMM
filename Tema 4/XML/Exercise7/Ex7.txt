@@ -1,0 +1,11 @@
+- What do comments look like in XML? (section 2.5):
+
+In section 2.5, comments have the following form "<!-- comment -->".
+
+- Can an attribute be repeated in the same element? (section 3.1)
+
+No, in section 3.1 an attribute can't be repeated within the same element, each attribute name must be unique inside an element.
+
+- Where is it stated that the element names in opening and closing tags must match?
+
+It is stated in section 3.

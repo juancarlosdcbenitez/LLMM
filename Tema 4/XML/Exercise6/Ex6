@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<letter>
+    <sender>
+        <name>Juan Pérez</name>
+        <address>Calle Mayor 12, Huelva</address>
+    </sender>
+    <receiver>
+        <name>María López</name>
+        <address>Avenida Andalucía 45, Sevilla</address>
+    </receiver>
+    <date>2026-03-19</date>
+    <body>
+        Estimada María,
+        Te escribo para confirmarte que el proyecto está terminado
+        y listo para su revisión. Si necesitas cualquier ajuste,
+        estaré encantado de ayudarte.
+    </body>
+    <signature>Juan Pérez</signature>
+</letter>
