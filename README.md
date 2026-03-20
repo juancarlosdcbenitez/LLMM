@@ -22,7 +22,7 @@ Este repositorio incluye las actividades llevadas a cabo en el módulo de *Lengu
 
 | Ejercicio | Descripción |
 |-----------|-------------|
-| [Ejercicios de JavaScript](Tema 3/JavaScript) | Ejercicios de JavaScript |
+| [Ejercicios de JavaScript](Tema-3/JavaScript) | Ejercicios de JavaScript |
 | [Ejercicios de HTML DOM](Tema1/ejercicio2.xml)  | Ejercicios de HTML DOM |
 | [Ejercicios de XML](Tema1/ejercicio3.md)   | Ejercicios de XML |
 | [Ejercicios de XML DOM](Tema1/ejercicio4/README.md) | Ejercicios de XML DOM |
