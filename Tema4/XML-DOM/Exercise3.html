@@ -15,7 +15,7 @@
 
         const xmlDoc = this.responseXML;
 
-        titulo1 = document.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+        titulo1 = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
         titulos = "";
         n = document.getElementsByTagName("title").length;
         for(i = 0; i < n; i++)
