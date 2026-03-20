@@ -22,10 +22,10 @@ Este repositorio incluye las actividades llevadas a cabo en el módulo de *Lengu
 
 | Ejercicio | Descripción |
 |-----------|-------------|
-| [Ejercicios de JavaScript](Tema3) | Ejercicios de JavaScript |
-| [Ejercicios de HTML DOM](Tema1/ejercicio2.xml)  | Ejercicios de HTML DOM |
-| [Ejercicios de XML](Tema1/ejercicio3.md)   | Ejercicios de XML |
-| [Ejercicios de XML DOM](Tema1/ejercicio4/README.md) | Ejercicios de XML DOM |
-| [Ejercicios de AJAX](Tema1/HTML/) | Ejercicios de AJAX |
+| [Ejercicios de JavaScript](Tema3/JavaScript/) | Ejercicios de JavaScript |
+| [Ejercicios de DOM](Tema3/DOM/)  | Ejercicios de DOM |
+| [Ejercicios de XML](Tema4/XML/)   | Ejercicios de XML |
+| [Ejercicios de XML DOM](Tema4/XML-DOM) | Ejercicios de XML DOM |
+| [Ejercicios de AJAX](Tema4/AJAX/) | Ejercicios de AJAX |
 | [Trabajo final 2ª evaluación](https://juancarlosdcbenitez.github.io/LLMM/qw2/index.html) | Trabajo final de trimestre |
 | [Archivos del trabajo final 2ª evaluación](qw2) | Archivos del trabajo final de trimestre |
