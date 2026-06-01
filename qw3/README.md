@@ -1,4 +1,4 @@
-# ProyectoXML - Concurso de preguntas con XML y AJAX
+# Práctica de final de evaluación - Concurso de preguntas con XML y AJAX
 
 ## Descripción
 Aplicación web que muestra un concurso de 20 preguntas sobre cine de terror cargadas dinámicamente desde archivos XML y estructuradas mediante un DTD.
