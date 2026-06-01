@@ -1,0 +1,36 @@
+<!ELEMENT real-estate (agencies, owners, properties, flats)>
+
+<!ELEMENT agencies (agency*)>
+<!ELEMENT agency (name, address | email | phone)*>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+
+<!ELEMENT owners (owner*)>
+<!ELEMENT owner (name, address)>
+<!ATTLIST owner id ID #REQUIRED>
+
+<!ELEMENT properties (property*)>
+<!ELEMENT property (name, address, description, number-of-flats, features?)>
+<!ATTLIST property owner-ref IDREF #REQUIRED>
+
+<!ELEMENT address (street-number, state, country?, postal-code)>
+<!ELEMENT street-number (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT postal-code (#PCDATA)>
+
+<!ELEMENT description (#PCDATA | flatReference)*>
+<!ELEMENT flatReference (#PCDATA)>
+<!ATTLIST flatReference flatName CDATA #REQUIRED>
+
+<!ELEMENT number-of-flats (#PCDATA)>
+
+<!ELEMENT features (feature, feature, feature?, feature?, feature?)>
+<!ELEMENT feature (#PCDATA)>
+
+<!ELEMENT flats (flat, flat, flat*)>
+<!ELEMENT flat (name, address, description, features?)>
+<!ATTLIST flat property-ref IDREF #REQUIRED>
+
+<!ELEMENT description ANY>

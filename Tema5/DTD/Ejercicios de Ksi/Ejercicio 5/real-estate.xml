@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE real-estate SYSTEM "real-estate.dtd">
+<real-estate>
+
+    <agencies>
+        <agency>
+            <name>Sunrise Realty</name>
+            <email>contact@sunrise.com</email>
+            <phone>600123456</phone>
+        </agency>
+    </agencies>
+
+    <owners>
+        <owner id="OWN1">
+            <name>John Doe</name>
+        </owner>
+    </owners>
+
+    <properties>
+        <property owner-ref="OWN1">
+            <name>Greenwood Apartments</name>
+
+            <description>
+                Spacious residential building. Includes flats:
+                <flatReference flatName="FlatA">See details</flatReference>
+                and
+                <flatReference flatName="FlatB">More info</flatReference>.
+            </description>
+
+            <number-of-flats>2</number-of-flats>
+            <features>Parking, Garden</features>
+        </property>
+    </properties>
+
+    <flats>
+        <flat property-ref="OWN1">
+            <name>FlatA</name>
+
+            <description>
+                <details>
+                    <rooms>2</rooms>
+                    <size>75 m2</size>
+                    <notes>Includes balcony</notes>
+                </details>
+            </description>
+
+            <features>Balcony</features>
+        </flat>
+
+        <flat property-ref="OWN1">
+            <name>FlatB</name>
+
+            <description>
+                <info>
+                    <type>Studio</type>
+                    <size>40 m2</size>
+                </info>
+            </description>
+
+            <features>Air conditioning</features>
+        </flat>
+    </flats>
+
+</real-estate>

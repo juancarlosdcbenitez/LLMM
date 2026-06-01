@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE daw SYSTEM "daw.dtd">
+<daw>
+    <modulo>
+        <nombre>Lenguajes de marcas y sistemas de gestión de información</nombre>
+        <descripcion>Trabajo con HTML, CSS, JavaScript, XML, JSON y sistemas de gestión de información.</descripcion>
+        <codigo>LLMM</codigo>
+        <profesor>José Ignacio Prieto Tinoco</profesor>
+        <fechas>
+            <inicio>
+                <dia>15</dia>
+                <mes>09</mes>
+                <anio>2025</anio>
+            </inicio>
+            <fin>
+                <dia>20</dia>
+                <mes>06</mes>
+                <anio>2026</anio>
+            </fin>
+        </fechas>
+    </modulo>
+
+    <modulo>
+        <nombre>Programación</nombre>
+        <descripcion>Fundamentos de programación estructurada y orientada a objetos.</descripcion>
+        <codigo>PROG</codigo>
+        <profesor>Antonia Fabián</profesor>
+        <fechas>
+            <inicio>
+                <dia>15</dia>
+                <mes>09</mes>
+                <anio>2025</anio>
+            </inicio>
+            <fin>
+                <dia>20</dia>
+                <mes>06</mes>
+                <anio>2026</anio>
+            </fin>
+        </fechas>
+    </modulo>
+</daw>
