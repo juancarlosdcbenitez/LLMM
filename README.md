@@ -40,5 +40,5 @@ Este repositorio incluye las actividades llevadas a cabo en el módulo de *Lengu
 | [Ejercicios de XPath](Tema5/XPath/)   | Ejercicios de XPath |
 | [Ejercicios de XSLT](Tema5/XSLT/) | Ejercicios de XSLT |
 | [Ejercicios de RSS](Tema5/RSS/) | Ejercicios de RSS |
-| [Trabajo final 3ª evaluación](https://juancarlosdcbenitez.github.io/LLMM/qw2/index.html) | Trabajo final de trimestre |
-| [Archivos del trabajo final 3ª evaluación](qw2) | Archivos del trabajo final de trimestre |
+| [Trabajo final 3ª evaluación](https://juancarlosdcbenitez.github.io/LLMM/qw3/index.html) | Trabajo final de trimestre |
+| [Archivos del trabajo final 3ª evaluación](qw3) | Archivos del trabajo final de trimestre |
