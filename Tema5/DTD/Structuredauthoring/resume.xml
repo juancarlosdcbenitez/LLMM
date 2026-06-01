@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resume SYSTEM "resume.dtd">
+<resume>
+
+  <personal-info>
+    <name>Juan Pérez</name>
+    <email>juan@example.com</email>
+    <phone>600123456</phone>
+    <location>
+      <city>Huelva</city>
+      <state>Andalucía</state>
+    </location>
+  </personal-info>
+
+  <education>
+    <school type="college">
+      <name>Austin Community College</name>
+      <degree>Associates of Applied Science</degree>
+      <year>1988</year>
+      <location>
+        <city>Austin</city>
+        <state>Texas</state>
+      </location>
+    </school>
+  </education>
+
+  <history>
+    <job>
+      <title>Web Developer</title>
+      <company>TechCorp</company>
+      <start>2019</start>
+      <end>2023</end>
+      <description>Frontend development and UI optimization.</description>
+    </job>
+  </history>
+
+  <skills>
+    <skill>HTML</skill>
+    <skill>CSS</skill>
+    <skill>JavaScript</skill>
+  </skills>
+
+</resume>

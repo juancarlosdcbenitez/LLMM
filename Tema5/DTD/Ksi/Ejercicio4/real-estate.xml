@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE real-estate SYSTEM "real-estate.dtd">
+<real-estate>
+
+    <agencies>
+        <agency>
+            <name>Sunrise Realty</name>
+            <email>contact@sunrise.com</email>
+            <phone>600123456</phone>
+        </agency>
+    </agencies>
+
+    <owners>
+        <owner id="OWN1">
+            <name>John Doe</name>
+        </owner>
+    </owners>
+
+    <properties>
+        <property owner-ref="OWN1">
+            <name>Greenwood Apartments</name>
+            <description>Residential building with multiple units</description>
+            <number-of-flats>2</number-of-flats>
+            <features>Parking, Garden</features>
+        </property>
+    </properties>
+
+    <flats>
+        <flat property-ref="OWN1">
+            <name>Flat A</name>
+            <description>Two-bedroom flat</description>
+            <features>Balcony</features>
+        </flat>
+
+        <flat property-ref="OWN1">
+            <name>Flat B</name>
+            <description>Studio apartment</description>
+            <features>Air conditioning</features>
+        </flat>
+    </flats>
+
+</real-estate>
