@@ -1,5 +1,0 @@
-<!ELEMENT real-estate (agencies, owners, properties, flats)>
-<!ELEMENT agencies EMPTY>
-<!ELEMENT owners EMPTY>
-<!ELEMENT properties EMPTY>
-<!ELEMENT flats EMPTY>
