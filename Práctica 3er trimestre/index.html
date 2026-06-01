@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Concurso de preguntas cargadas desde XML y validadas mediante DTD.">
+  <title>Concurso de preguntas sobre cine de terror</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section id="pantalla-inicio" class="card hero">
+      <p class="eyebrow">XML · AJAX · DOM · DTD</p>
+      <h1 id="titulo-app">Concurso de preguntas XML</h1>
+      <p id="descripcion-app" class="lead">
+        Pon a prueba tus conocimientos sobre cine de terror con 20 preguntas cargadas dinámicamente.
+      </p>
+
+      <div class="panel-configuracion">
+        <label for="idioma" id="label-idioma">Idioma</label>
+        <select id="idioma">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+
+        <button id="start" class="btn btn-primary" type="button">Comenzar</button>
+      </div>
+
+      <div class="detalles">
+        <article>
+          <strong id="detalle-preguntas">20 preguntas</strong>
+          <span id="detalle-preguntas-desc">Una respuesta correcta por pregunta</span>
+        </article>
+        <article>
+          <strong id="detalle-tiempo">Contrarreloj</strong>
+          <span id="detalle-tiempo-desc">Se registra el tiempo empleado</span>
+        </article>
+        <article>
+          <strong id="detalle-revision">Revisión final</strong>
+          <span id="detalle-revision-desc">Comprueba tus aciertos y errores</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="pantalla-quiz" class="card quiz-card oculto" aria-live="polite">
+      <header class="quiz-header">
+        <div>
+          <p id="contador-pregunta" class="eyebrow">Pregunta 1 de 20</p>
+          <h2 id="enunciado"></h2>
+        </div>
+        <div class="timer" aria-label="Tiempo transcurrido">
+          <span>⏱</span>
+          <strong id="timer">00:00</strong>
+        </div>
+      </header>
+
+      <div class="progress" aria-hidden="true">
+        <div id="barra-progreso"></div>
+      </div>
+
+      <form id="opciones" class="opciones"></form>
+
+      <p id="aviso" class="aviso" role="alert"></p>
+
+      <footer class="acciones">
+        <button id="reiniciar-durante" class="btn btn-secondary" type="button">Reiniciar</button>
+        <button id="siguiente" class="btn btn-primary" type="button">Siguiente</button>
+      </footer>
+    </section>
+
+    <section id="pantalla-resultado" class="card resultado-card oculto" aria-live="polite">
+      <p class="eyebrow" id="resultado-label">Resultado final</p>
+      <h2 id="mensaje-final"></h2>
+
+      <div class="marcador">
+        <article>
+          <span id="label-aciertos">Aciertos</span>
+          <strong id="score-final">0 / 20</strong>
+        </article>
+        <article>
+          <span id="label-nota">Nota</span>
+          <strong id="nota-final">0 / 10</strong>
+        </article>
+        <article>
+          <span id="label-tiempo-final">Tiempo</span>
+          <strong id="tiempo-final">00:00</strong>
+        </article>
+        <article>
+          <span id="label-record">Mejor marca</span>
+          <strong id="mejor-marca">—</strong>
+        </article>
+      </div>
+
+      <div class="acciones resultado-acciones">
+        <button id="repetir" class="btn btn-primary" type="button">Volver a jugar</button>
+        <button id="ver-revision" class="btn btn-secondary" type="button">Ver revisión</button>
+      </div>
+
+      <div id="revision" class="revision oculto"></div>
+    </section>
+
+    <noscript>
+      Esta aplicación necesita JavaScript para cargar las preguntas XML y corregir el concurso.
+    </noscript>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE test SYSTEM "test.dtd">
+<test>
+
+  <question id="q1">
+    <wording>¿Quién dirigió El Exorcista?</wording>
+    <choices>
+      <choice correct="yes">William Friedkin</choice>
+      <choice>Wes Craven</choice>
+      <choice>James Wan</choice>
+      <choice>John Carpenter</choice>
+    </choices>
+  </question>
+
+  <question id="q2">
+    <wording>¿En qué película aparece Ghostface?</wording>
+    <choices>
+      <choice correct="yes">Scream</choice>
+      <choice>Saw</choice>
+      <choice>Insidious</choice>
+      <choice>The Ring</choice>
+    </choices>
+  </question>
+
+  <question id="q3">
+    <wording>¿Qué arma usa Chucky habitualmente?</wording>
+    <choices>
+      <choice correct="yes">Un cuchillo</choice>
+      <choice>Un bate</choice>
+      <choice>Una cuerda</choice>
+      <choice>Un hacha</choice>
+    </choices>
+  </question>
+
+  <question id="q4">
+    <wording>¿Cómo se llama el hotel de El Resplandor?</wording>
+    <choices>
+      <choice correct="yes">Overlook Hotel</choice>
+      <choice>Blackwood Hotel</choice>
+      <choice>Ravenwood Inn</choice>
+      <choice>Hill House</choice>
+    </choices>
+  </question>
+
+  <question id="q5">
+    <wording>¿Qué demonio aparece en La Monja?</wording>
+    <choices>
+      <choice correct="yes">Valak</choice>
+      <choice>Pazuzu</choice>
+      <choice>Bughuul</choice>
+      <choice>Annabelle</choice>
+    </choices>
+  </question>
+
+  <question id="q6">
+    <wording>¿Quién dirigió Hereditary?</wording>
+    <choices>
+      <choice correct="yes">Ari Aster</choice>
+      <choice>Jordan Peele</choice>
+      <choice>Mike Flanagan</choice>
+      <choice>Robert Eggers</choice>
+    </choices>
+  </question>
+
+  <question id="q7">
+    <wording>¿En qué país transcurre REC?</wording>
+    <choices>
+      <choice correct="yes">España</choice>
+      <choice>Francia</choice>
+      <choice>México</choice>
+      <choice>Argentina</choice>
+    </choices>
+  </question>
+
+  <question id="q8">
+    <wording>¿Qué persigue a los protagonistas en It Follows?</wording>
+    <choices>
+      <choice correct="yes">Una entidad que cambia de forma</choice>
+      <choice>Un fantasma</choice>
+      <choice>Un demonio</choice>
+      <choice>Un vampiro</choice>
+    </choices>
+  </question>
+
+  <question id="q9">
+    <wording>¿Qué personaje usa una motosierra?</wording>
+    <choices>
+      <choice correct="yes">Leatherface</choice>
+      <choice>Freddy Krueger</choice>
+      <choice>Jason Voorhees</choice>
+      <choice>Michael Myers</choice>
+    </choices>
+  </question>
+
+  <question id="q10">
+    <wording>¿En qué película aparece por primera vez Annabelle?</wording>
+    <choices>
+      <choice correct="yes">The Conjuring</choice>
+      <choice>Annabelle</choice>
+      <choice>Insidious</choice>
+      <choice>Sinister</choice>
+    </choices>
+  </question>
+
+  <question id="q11">
+    <wording>¿Quién dirigió Midsommar?</wording>
+    <choices>
+      <choice correct="yes">Ari Aster</choice>
+      <choice>James Wan</choice>
+      <choice>Sam Raimi</choice>
+      <choice>Guillermo del Toro</choice>
+    </choices>
+  </question>
+
+  <question id="q12">
+    <wording>¿Qué película popularizó el found footage?</wording>
+    <choices>
+      <choice correct="yes">The Blair Witch Project</choice>
+      <choice>Cloverfield</choice>
+      <choice>Paranormal Activity</choice>
+      <choice>REC</choice>
+    </choices>
+  </question>
+
+  <question id="q13">
+    <wording>¿Qué villano ataca en los sueños?</wording>
+    <choices>
+      <choice correct="yes">Freddy Krueger</choice>
+      <choice>Pinhead</choice>
+      <choice>Pennywise</choice>
+      <choice>Samara</choice>
+    </choices>
+  </question>
+
+  <question id="q14">
+    <wording>¿Qué película presenta rompecabezas mortales?</wording>
+    <choices>
+      <choice correct="yes">Saw</choice>
+      <choice>Hostel</choice>
+      <choice>Cube</choice>
+      <choice>Escape Room</choice>
+    </choices>
+  </question>
+
+  <question id="q15">
+    <wording>¿Qué animal aparece en The Witch?</wording>
+    <choices>
+      <choice correct="yes">Un macho cabrío negro</choice>
+      <choice>Un lobo</choice>
+      <choice>Un cuervo</choice>
+      <choice>Un oso</choice>
+    </choices>
+  </question>
+
+  <question id="q16">
+    <wording>¿Qué película ocurre casi toda dentro de un ataúd?</wording>
+    <choices>
+      <choice correct="yes">Buried</choice>
+      <choice>The Descent</choice>
+      <choice>The Hole</choice>
+      <choice>The Cellar</choice>
+    </choices>
+  </question>
+
+  <question id="q17">
+    <wording>¿Qué película muestra una cinta de vídeo maldita?</wording>
+    <choices>
+      <choice correct="yes">The Ring</choice>
+      <choice>Sinister</choice>
+      <choice>The Grudge</choice>
+      <choice>Smile</choice>
+    </choices>
+  </question>
+
+  <question id="q18">
+    <wording>¿Quién dirigió Nope y Us?</wording>
+    <choices>
+      <choice correct="yes">Jordan Peele</choice>
+      <choice>James Wan</choice>
+      <choice>David F. Sandberg</choice>
+      <choice>Scott Derrickson</choice>
+    </choices>
+  </question>
+
+  <question id="q19">
+    <wording>¿Qué personaje lleva una máscara de hockey?</wording>
+    <choices>
+      <choice correct="yes">Jason Voorhees</choice>
+      <choice>Michael Myers</choice>
+      <choice>Leatherface</choice>
+      <choice>Ghostface</choice>
+    </choices>
+  </question>
+
+  <question id="q20">
+    <wording>¿Qué película trata sobre un ritual sueco?</wording>
+    <choices>
+      <choice correct="yes">Midsommar</choice>
+      <choice>The Ritual</choice>
+      <choice>Apostle</choice>
+      <choice>The Wicker Man</choice>
+    </choices>
+  </question>
+
+</test>
