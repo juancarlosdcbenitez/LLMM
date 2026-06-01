@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="alumnos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="alumno" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="apellidos" type="xs:string"/>
+                            <xs:element name="domicilio" type="xs:string"/>
+                            <xs:element name="telefono" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="tipo" use="required">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:enumeration value="propio"/>
+                                                        <xs:enumeration value="padre"/>
+                                                        <xs:enumeration value="madre"/>
+                                                        <xs:enumeration value="tutor"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="equipo" type="xs:string" minOccurs="0"/>
+                            <xs:element name="aficion" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+
+                            <xs:element name="origen">
+                                <xs:complexType>
+                                    <xs:choice>
+                                        <xs:element name="provincia" type="xs:string"/>
+                                        <xs:element name="pais" type="xs:string"/>
+                                    </xs:choice>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="comentarios" minOccurs="0">
+                                <xs:complexType mixed="true">
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:any processContents="lax"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="notas">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="evaluacion" type="xs:string" maxOccurs="unbounded"/>
+                                        <xs:element name="calificacion" type="xs:string" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+
+                        <xs:attribute name="num_alumno" type="xs:ID" use="required"/>
+                        <xs:attribute name="altura" type="xs:positiveInteger" use="optional"/>
+                        <xs:attribute name="sexo">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="H"/>
+                                    <xs:enumeration value="M"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="ayuda" type="xs:IDREF" use="optional"/>
+
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
