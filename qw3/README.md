@@ -28,7 +28,7 @@ La aplicación permite elegir idioma, responder las preguntas en formato de pres
 
 ## Archivos del proyecto
 ```text
-ProyectoXML/
+qw3/
 ├── index.html
 ├── style.css
 ├── script.js
@@ -64,4 +64,4 @@ Pasos:
 4. Seleccionar `Open with Live Server`.
 
 ## Autor
-Juan Carlos Benítez
+Juan Carlos Del Carmen Benítez
