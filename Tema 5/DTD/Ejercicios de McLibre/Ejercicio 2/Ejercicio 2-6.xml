@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE países [
+    <!ELEMENT países (país*)>
+    <!ELEMENT país (nombre, unionEuropea?, otan?)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT unionEuropea EMPTY>
+    <!ELEMENT otan EMPTY>
+]>
+<países>
+    <país>
+        <nombre>España</nombre>
+        <unionEuropea />
+        <otan />
+    </país>
+    <país>
+        <nombre>Noruega</nombre>
+        <otan />
+    </país>
+    <país>
+        <nombre>Austria</nombre>
+        <unionEuropea />
+    </país>
+</países>

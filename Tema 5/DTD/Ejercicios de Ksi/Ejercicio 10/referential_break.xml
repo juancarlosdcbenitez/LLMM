@@ -1,0 +1,10 @@
+<property pid="p2" owner-ref="o999">
+    <name>Invalid Property</name>
+    <address>
+        <street-number>X</street-number>
+        <state>Nowhere</state>
+        <postal-code>00000</postal-code>
+    </address>
+    <description>Broken reference</description>
+    <number-of-flats>0</number-of-flats>
+</property>
